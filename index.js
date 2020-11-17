@@ -30,6 +30,9 @@ app.use(cookieParser('Secret_LOL'));
 
 app.use(fileUpload({ limits: { fileSize: 5 * 1024 * 1024 }, safeFileNames: true, abortOnLimit: true }));
 
+// ENABLE OR INITIATE ROUTES
+require('@/routes').default(app);
+
 server.listen(app.get("port") || 8001, "127.0.0.1");
 
 const onError = (error) => {
